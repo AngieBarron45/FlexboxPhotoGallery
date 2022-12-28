@@ -1,0 +1,42 @@
+*{ /* El asterísco (*) es para seleccionar TODO. */
+    box-sizing: border-box;
+}
+.gallery img{
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover; /* AJUSTAR las medidas de todas las imágenes para que no se vean distorcionadas. */
+    border-radius: 10px;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f6f7;
+}
+.header{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+}
+.gallery{ /* FLEXBOX. Flexbox es un diseño CSS unidimensional que puede controlar la forma en que los elementos se espacian y alinean dentro de un contenedor. */
+    display: flex; /* Esto hará que el elemento sea un contenedor flexible (flex container). Los elementos secundarios directos de un contenedor flexible se denominan elementos flexibles (flex items).  */
+    flex-direction: row; /* FLEXBOX. Flexbox tiene un eje principal y transversal. El eje principal está definido por la propiedad de flex-direction, que tiene cuatro valores posibles: 
+    *ROW (DEFAULT): eje horizontal con elementos flexibles de izquierda a derecha.
+    *ROW-REVERSE: eje horizontal con elementos flexibles de derecha a izquierda.
+    COLUMN: eje vertical con elementos flexibles de arriba a abajo.
+    COLUMN-REVERSE: eje vertical con elementos flexibles de abajo hacia arriba.*/
+    flex-wrap: wrap; /* La propiedad flex-wrap determina cómo se comportan sus elementos flexibles cuando el contenedor flexible es demasiado pequeño. Configurarlo en WRAP permitirá que los elementos se ajusten a la siguiente fila o columna. NOWRAP (predeterminado) evitará que sus artículos se envuelvan y los reducirá si es necesario. */
+    justify-content: center; /* CENTRAR HORIRONTALMENTE los elementos del FLEXBOX. */
+    align-items: center; /* CENTRAR VERTICALMENTE los elementos FLEXBOX. */
+    padding: 20px 10px;
+    max-width: 1400px;
+    margin: 0 auto; /* CENTRAR los elementos de la galería. */
+    gap: 16px; /* GAP/ HUECOS, BRECHAS. La propiedad de espacio (GAP) y sus subpropiedades de espacio entre filas (ROW-GAP) y espacio entre columnas (COLUMN-GAP) proporcionan esta funcionalidad para el diseño flexible, de cuadrícula y de varias columnas. */
+}
+.gallery::after{ /* PSEUDO ELEMENTO. Para separar un poco la última imagen de la galería de fotos. (Último hijo del elemento seleccionado). */
+    content: "";
+    width: 350px;
+}
